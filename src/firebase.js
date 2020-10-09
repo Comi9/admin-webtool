@@ -1,18 +1,11 @@
 import React, { Suspense, useState, useEffect, useContext, createContext } from 'react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import { firebaseConfig } from "./firebaseConfig"
 
 // Add your Firebase credentials
 if (!firebase.apps.length) {
-  firebase.initializeApp({
-    apiKey: "AIzaSyBk9VHWCWzqporPokPMqviBsWrihVCWWX8",
-    authDomain: "fits-platform.firebaseapp.com",
-    databaseURL: "https://fits-platform.firebaseio.com",
-    projectId: "fits-platform",
-    storageBucket: "fits-platform.appspot.com",
-    messagingSenderId: "491013404105",
-    appId: "1:491013404105:web:495504a964ac89310e6418"
-  })
+  firebase.initializeApp(firebaseConfig)
 }
 
 const FirebaseAuthContext = createContext()
